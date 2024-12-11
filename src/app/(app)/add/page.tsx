@@ -27,8 +27,20 @@ const Page = () => {
 
   useEffect(() => {
     fetch(`/api/search?query=${encodeURIComponent(query)}`)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          // Log the response status and status text for debugging
+          console.error('Fetch error:', res.status, res.statusText)
+          throw new Error('Network response was not ok')
+        }
+        return res.json()
+      })
       .then(setMovies)
+      .catch((error) => {
+        // Handle JSON parsing errors or network errors
+        console.error('Error fetching movies:', error)
+        // Optionally, you can set an error state here to inform the user
+      })
   }, [query])
 
   const router = useRouter()
