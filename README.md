@@ -1,5 +1,9 @@
 # Our Favorite Movies
 
+This is a simple Nextjs and Payload CMS project.
+
+![Project Screenshot]('./screenshot.png')
+
 ## Environment Variables
 
 Before running the project, make sure to create a `.env` file in the root directory of the project with the following variables:
@@ -27,6 +31,8 @@ To run the project, follow these steps:
    ```
 
 3. **Access the Application**: Open your browser and go to `http://localhost:3000` to view the application.
+
+4. **Access the CMS**: Open your browser and go to `http://localhost:3000/admin` to access the Payload CMS.
 
 ## Additional Information
 
