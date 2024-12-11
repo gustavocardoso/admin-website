@@ -2,7 +2,7 @@
 
 This is a simple Nextjs and Payload CMS project.
 
-![Project Screenshot]('./screenshot.png')
+![Project Screenshot]('https://raw.githubusercontent.com/gustavocardoso/our-favorite-movies/refs/heads/main/screenshot.jpg')
 
 ## Environment Variables
 
