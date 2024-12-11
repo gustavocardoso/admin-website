@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 
-const Page = async ({ params }: { params: { slug: string } }) => {
+const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const payload = await getPayload({ config: configPromise })
-  const { slug } = params
+  const { slug } = await params
 
   const movies = await payload.find({
     collection: 'movies',
@@ -44,7 +44,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         <h3 className="text-xl font-semibold mb-4">Genres</h3>
         <ul className="flex gap-2 divide-x-[1px] divide-gray-600 items-center mb-8">
           {movie.genres.map((genre) => (
-            <li className="pl-2 first:pl-0">{genre.name}</li>
+            <li className="pl-2 first:pl-0" key={genre.id}>
+              {genre.name}
+            </li>
           ))}
         </ul>
 
