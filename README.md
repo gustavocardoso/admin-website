@@ -2,7 +2,7 @@
 
 This is a simple Nextjs and Payload CMS project.
 
-![Project Screenshot]('screenshot.jpg')
+![Project Screenshot](screenshot.jpg)
 
 ## Environment Variables
 
